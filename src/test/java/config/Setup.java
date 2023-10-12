@@ -1,5 +1,8 @@
+package config;
+
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import java.net.MalformedURLException;
@@ -7,7 +10,7 @@ import java.net.URL;
 import java.time.Duration;
 
 public class Setup {
-AndroidDriver androidDriver;
+public AndroidDriver androidDriver;
 @BeforeTest
     public AndroidDriver setup() throws MalformedURLException {
 
@@ -24,5 +27,9 @@ AndroidDriver androidDriver;
         androidDriver = new AndroidDriver(url, dcaps);
         androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         return androidDriver;
+    }
+    @AfterTest
+    public void closeDriver(){
+    androidDriver.quit();
     }
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name = "Calculator automation with appium">
+    <test name = "do series calculation">
+        <classes>
+            <class name = "testRunner.CalcTestRunner">
+
+            </class>
+        </classes>
+    </test>
+</suite>
