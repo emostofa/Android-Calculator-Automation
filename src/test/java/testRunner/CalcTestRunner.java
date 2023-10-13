@@ -11,7 +11,9 @@ public class CalcTestRunner extends Setup {
     public void doSumOfTheSeries(){
         CalcPage calcPage = new CalcPage(androidDriver);
         Utills utills = new Utills();
+
         String series = "100/10*5-10+60";
+
         String result = calcPage.doSeries(series);
         String expectedResult = utills.calculateSeries(series);
         Assert.assertEquals(result,expectedResult);
